@@ -55,4 +55,32 @@ public class WordAnalyserTest {
 
         assertArrayEquals(expectedOutput, result);
     }
+
+    @Test
+    @DisplayName("WordAnalyser: calculateLetterFrequency should return null if text is empty")
+    void testCalculateLetterFrequencyShouldReturnNull() {
+        var result = wordAnalyser.calculateLetterFrequency("");
+
+        assertNull(result);
+    }
+
+    @Test
+    @DisplayName("WordAnalyser: calculateLetterFrequency should return Map of letters with frequency count")
+    void testCalculateLetterFrequencyShouldReturnMapOfLetterFrequency() {
+        var inputStr1 = "Hello world!";
+        var inputStr2 = "Hi Henry! How are you?";
+        var inputStr3 = "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+        var result1 = wordAnalyser.calculateLetterFrequency(inputStr1).get('l');
+        var result2 = wordAnalyser.calculateLetterFrequency(inputStr2).get('H');
+        var result3 = wordAnalyser.calculateLetterFrequency(inputStr2).get('o');
+        var result4 = wordAnalyser.calculateLetterFrequency(inputStr3).get('i');
+
+        assertAll("Grouped Assertions for calculateLetterFrequency",
+                () -> assertEquals(3, result1),
+                () -> assertEquals(3, result2),
+                () -> assertEquals(2, result3),
+                () -> assertEquals(42, result4)
+                );
+    }
 }
