@@ -21,4 +21,28 @@ public class WordAnalyserTest {
 
         assertArrayEquals(expectedOutput, result);
     }
+
+    @Test
+    @DisplayName("WordAnalyser: findLongestWords should return the longest words in given string")
+    void testFindLongestWordsShouldReturnLongestWords() {
+        WordAnalyser wordAnalyser = new WordAnalyser();
+
+        var inputStr1 = "Find the longest word in a string";
+        var inputStr2 = "isjdhfgdslkfhskdfhksjdfshdkkjhdlksfjh <- what is that?";
+        var inputStr3 = "Absolute Anywhere Bachelor Dog Cat Mouse Happen";
+
+        var result1 = wordAnalyser.findLongestWords(inputStr1);
+        var result2 = wordAnalyser.findLongestWords(inputStr2);
+        var result3 = wordAnalyser.findLongestWords(inputStr3);
+
+        String[] expectedOutput1 = {"longest"};
+        String[] expectedOutput2 = {"isjdhfgdslkfhskdfhksjdfshdkkjhdlksfjh"};
+        String[] expectedOutput3 = {"Absolute", "Anywhere", "Bachelor"};
+
+        assertAll("Grouped Assertions for findLongestWord",
+                () -> assertArrayEquals(expectedOutput1, result1),
+                () -> assertArrayEquals(expectedOutput2, result2),
+                () -> assertArrayEquals(expectedOutput3, result3)
+        );
+    }
 }
