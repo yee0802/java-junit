@@ -15,4 +15,29 @@ public class CompassTest {
 
         assertEquals(Compass.Point.EAST, result);
     }
+
+    @Test
+    @DisplayName("Compass: rotate method should return correct Point with Direction RIGHT")
+    public void testRotateReturnsCorrectPointWithDirectionRight() {
+        var compass = new Compass();
+        var direction = Compass.Direction.RIGHT;
+
+        var northPoint = Compass.Point.NORTH;
+        var eastPoint = Compass.Point.EAST;
+        var westPoint = Compass.Point.WEST;
+        var southPoint = Compass.Point.SOUTH;
+
+        var result1 = compass.rotate(northPoint, direction);
+        var result2 = compass.rotate(eastPoint, direction);
+        var result3 = compass.rotate(southPoint, direction);
+        var result4 = compass.rotate(westPoint, direction);
+
+        assertAll(
+                "Grouped Assertions for rotate",
+                () -> assertEquals(eastPoint, result1),
+                () -> assertEquals(southPoint, result2),
+                () -> assertEquals(westPoint, result3),
+                () -> assertEquals(northPoint, result4)
+        );
+    }
 }
