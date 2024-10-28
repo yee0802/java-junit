@@ -1,7 +1,6 @@
 public class StringManipulator {
     public String reverseString(String input) {
-        // TODO: Implement the logic to reverse the input string
-        return "";
+        return new StringBuilder(input).reverse().toString();
     }
 
     public boolean isPalindrome(String input) {
