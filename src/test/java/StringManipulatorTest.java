@@ -12,9 +12,9 @@ public class StringManipulatorTest {
         var expectedOutput1 = "!em esrever";
 
         var inputStr2 = "Hello World";
-        var expectedOutput2 = "dlroW oellH";
+        var expectedOutput2 = "dlroW olleH";
 
-        var inputStr3 = "!desrever yllufss3ccus am I";
+        var inputStr3 = "!desrever yllufss3ccus ma I";
         var expectedOutput3 = "I am succ3ssfully reversed!";
 
 
