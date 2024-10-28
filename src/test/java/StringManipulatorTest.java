@@ -27,6 +27,25 @@ public class StringManipulatorTest {
                 () -> assertEquals(expectedOutput2, result2),
                 () -> assertEquals(expectedOutput3, result3)
         );
+    }
 
+    @Test
+    @DisplayName("StringManipulator: isPalindrome should return correct boolean if/if not input is palindrome")
+    void testIsPalindrome() {
+        StringManipulator stringManipulator = new StringManipulator();
+
+        var result1 = stringManipulator.isPalindrome("level");
+        var result2 = stringManipulator.isPalindrome("definitely not a palindrome");
+        var result3 = stringManipulator.isPalindrome("racecar");
+        var result4 = stringManipulator.isPalindrome("noon");
+        var result5 = stringManipulator.isPalindrome("connection");
+
+        assertAll("Grouped Assertions for reverseString method",
+                () -> assertTrue(result1),
+                () -> assertFalse(result2),
+                () -> assertTrue(result3),
+                () -> assertTrue(result4),
+                () -> assertFalse(result5)
+        );
     }
 }
