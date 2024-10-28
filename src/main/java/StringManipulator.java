@@ -4,7 +4,6 @@ public class StringManipulator {
     }
 
     public boolean isPalindrome(String input) {
-        // TODO: Implement the logic to check if the input string is a palindrome
-        return false;
+        return new StringBuilder(input).reverse().toString().equals(input);
     }
 }
