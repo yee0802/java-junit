@@ -25,8 +25,6 @@ public class WordAnalyserTest {
     @Test
     @DisplayName("WordAnalyser: findLongestWords should return the longest words in given string")
     void testFindLongestWordsShouldReturnLongestWords() {
-        WordAnalyser wordAnalyser = new WordAnalyser();
-
         var inputStr1 = "Find the longest word in a string";
         var inputStr2 = "isjdhfgdslkfhskdfhksjdfshdkkjhdlksfjh <- what is that?";
         var inputStr3 = "Absolute Anywhere Bachelor Dog Cat Mouse Happen";
@@ -49,8 +47,6 @@ public class WordAnalyserTest {
     @Test
     @DisplayName("WordAnalyser: findLongestWords should return the longest words in given string without duplicates")
     void testFindLongestWordsShouldReturnLongestWordsWithoutDuplicates() {
-        WordAnalyser wordAnalyser = new WordAnalyser();
-
         var inputStr = "Absolute Absolute Anywhere Bachelor Dog Cat Mouse Happen Bachelor";
 
         var result = wordAnalyser.findLongestWords(inputStr);

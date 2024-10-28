@@ -1,13 +1,18 @@
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class StringManipulatorTest {
+    StringManipulator stringManipulator;
+
+    @BeforeEach
+    void setUp() { stringManipulator = new StringManipulator();}
 
     @Test
     @DisplayName("StringManipulator: reverseString should reverse string in correct format")
     void testReverseString() {
-        StringManipulator stringManipulator = new StringManipulator();
         var inputStr1 = "reverse me!";
         var expectedOutput1 = "!em esrever";
 
@@ -32,8 +37,6 @@ public class StringManipulatorTest {
     @Test
     @DisplayName("StringManipulator: isPalindrome should return correct boolean if/if not input is palindrome")
     void testIsPalindrome() {
-        StringManipulator stringManipulator = new StringManipulator();
-
         var result1 = stringManipulator.isPalindrome("level");
         var result2 = stringManipulator.isPalindrome("definitely not a palindrome");
         var result3 = stringManipulator.isPalindrome("racecar");

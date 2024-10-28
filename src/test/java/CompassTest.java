@@ -1,13 +1,17 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CompassTest {
+    Compass compass;
+
+    @BeforeEach
+    void setUp() { compass = new Compass();}
 
     @Test
     @DisplayName("Compass: rotate method should return EAST when passed NORTH & RIGHT")
     public void testRotateReturnsCorrectPoint() {
-        var compass = new Compass();
         var point = Compass.Point.NORTH;
         var direction = Compass.Direction.RIGHT;
 
@@ -19,7 +23,6 @@ public class CompassTest {
     @Test
     @DisplayName("Compass: rotate method should return correct Point with Direction RIGHT")
     public void testRotateReturnsCorrectPointWithDirectionRight() {
-        var compass = new Compass();
         var direction = Compass.Direction.RIGHT;
 
         var northPoint = Compass.Point.NORTH;
@@ -44,7 +47,6 @@ public class CompassTest {
     @Test
     @DisplayName("Compass: rotate method should return correct Point with Direction LEFT")
     public void testRotateReturnsCorrectPointWithDirectionLeft() {
-        var compass = new Compass();
         var direction = Compass.Direction.LEFT;
 
         var northPoint = Compass.Point.NORTH;
