@@ -26,7 +26,22 @@ public class WordAnalyser {
     }
 
     public Map<Character, Integer> calculateLetterFrequency(String text) {
-        // TODO: Implement the logic to calculate the frequency of each letter in the given text
-        return null;
+        if (text.isEmpty()) {
+            return null;
+        }
+
+        Map<Character, Integer> letterFrequency = new HashMap<>();
+
+        for (char c : text.toCharArray()) {
+            if (Character.isLetter(c)) {
+                if (letterFrequency.containsKey(c)) {
+                    letterFrequency.put(c, letterFrequency.get(c) + 1);
+                } else {
+                    letterFrequency.put(c, 1);
+                }
+            }
+        }
+
+        return letterFrequency;
     }
 }
