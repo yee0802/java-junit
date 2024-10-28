@@ -45,4 +45,18 @@ public class WordAnalyserTest {
                 () -> assertArrayEquals(expectedOutput3, result3)
         );
     }
+
+    @Test
+    @DisplayName("WordAnalyser: findLongestWords should return the longest words in given string without duplicates")
+    void testFindLongestWordsShouldReturnLongestWordsWithoutDuplicates() {
+        WordAnalyser wordAnalyser = new WordAnalyser();
+
+        var inputStr = "Absolute Absolute Anywhere Bachelor Dog Cat Mouse Happen Bachelor";
+
+        var result = wordAnalyser.findLongestWords(inputStr);
+
+        String[] expectedOutput = {"Absolute", "Anywhere", "Bachelor"};
+
+        assertArrayEquals(expectedOutput, result);
+    }
 }
